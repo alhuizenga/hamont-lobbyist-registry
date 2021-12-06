@@ -1,6 +1,8 @@
 # Hamilton Lobbyist Registry
 
-Python 3 script that retrieves public data from the [search portal for the City of Hamilton Lobbyist Registry](http://https://www.hamilton.ca/government-information/accountability/lobbyist-registry/search) and formats it for easier use.
+Python 3 script that retrieves public data from the [search portal for the City of Hamilton Lobbyist Registry](http://https://www.hamilton.ca/government-information/accountability/lobbyist-registry/search) and formats it for easier use. Outputs registry data as local CSV and JSON files:
+* hamilton_lobbyist_registry_(current-date).csv
+* hamilton_lobbyist_registry_(current-date).json
 
 Uses these modules:
 * requests
