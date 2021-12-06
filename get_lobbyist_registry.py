@@ -3,6 +3,7 @@ import csv
 import datetime
 from bs4 import BeautifulSoup
 import re
+import json
 
 
 def getRegistry():
@@ -137,8 +138,8 @@ def parseDetails(url):
 
 
 def writeRecords(records):
-	fieldnames = ['name',
-	'title',
+	fieldnames = ['lobbyist_name',
+	'lobbyist_title',
 	'lobbyist_type',
 	'client',
 	'lobbyist_status',
@@ -168,6 +169,10 @@ def writeRecords(records):
 	for r in records:
 		writer.writerow(r)
 	csvfile.close()
+	jsonfile = open('hamilton_lobbyist_registry_'+str(current_date.month)+'-'+str(current_date.day)+'-'+str(current_date.year)+'.json', 'w', encoding='utf8', newline='')
+	with jsonfile:
+	    json.dump(records, jsonfile)
+	jsonfile.close()
 
 getRegistry()
 
